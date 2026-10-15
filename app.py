@@ -9,7 +9,7 @@ from google import genai
 from google.genai import types
 
 # Backup models are tried in order if the first one is busy or unavailable.
-MODELS = ["gemini-flash-lite-latest"]
+MODELS = ["gemini-2.5-flash"]
 DISCLAIMER = "This is awareness guidance, not legal advice."
 COLORS = {"High": "#ffb3b3", "Medium": "#ffe0a3", "Low": "#c8f0c8"}
 ICONS = {"High": "🔴", "Medium": "🟠", "Low": "🟢"}

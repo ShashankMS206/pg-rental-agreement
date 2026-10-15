@@ -112,6 +112,10 @@ Rules:
 
 
 @st.cache_resource
+def _make_client(key: str):
+    return genai.Client(api_key=key)
+
+
 def get_client():
     key = os.environ.get("GEMINI_API_KEY")
     if not key:
@@ -126,7 +130,7 @@ def get_client():
             "For Streamlit Community Cloud, add it in the app's Settings > Secrets."
         )
         st.stop()
-    return genai.Client(api_key=key)
+    return _make_client(key.strip())
 
 
 def parse_json(raw: str) -> dict:
